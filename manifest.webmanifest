@@ -3,8 +3,8 @@
     "short_name": "HospitalHustle",
     "start_url": "index.html",
     "display": "fullscreen",
-    "background_color": "#231F20",
-    "theme_color": "#000",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFB500",
     "description": "",
     "icons": [{
       "src": "TemplateData/icons/unity-logo-dark.png",
