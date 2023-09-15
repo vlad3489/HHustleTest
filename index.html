@@ -98,14 +98,25 @@
 			}).then((unityInstance) => {
 				loadingBar.style.display = "none";
 				gameInstance = unityInstance;
+				setTimeout(PlatformInitializer, 4000);
 			}).catch((message) => {
 				alert(message);
 			});
 		};
 		document.body.appendChild(script);
+
+		function PlatformInitializer() {
+			if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+				gameInstance.SendMessage('[GameData]', 'SetRunningPlatformValue', 'mobile');
+			} else	{
+			gameInstance.SendMessage('[GameData]', 'SetRunningPlatformValue', navigator.userAgent);
+			}
+		}
+
 	</script>
 
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<!-- JQuery and delay init -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 	<script>
 		$(document).ready(function () {
 			setTimeout(PlatformInitializer, 3000);
@@ -119,7 +130,7 @@
 				gameInstance.SendMessage('[GameData]', 'SetRunningPlatformValue', navigator.userAgent);
 			}
 		}
-	</script>
+	</script> -->
 </body>
 
 </html>
