@@ -98,7 +98,8 @@
 			}).then((unityInstance) => {
 				loadingBar.style.display = "none";
 				gameInstance = unityInstance;
-				setTimeout(PlatformInitializer, 4000);
+				// setTimeout(PlatformInitializer, 4000);
+				PlatformInitializer();
 			}).catch((message) => {
 				alert(message);
 			});
